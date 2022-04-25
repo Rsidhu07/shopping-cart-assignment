@@ -6,10 +6,6 @@ import Nav from './components/Nav/Nav';
 import Home from './containers/Home/Home';
 import Signup from './containers/Signup/Signup';
 
-// const userAllowed = {
-//   email: 'task@gmail.com',
-//   password: '12345678'
-// }
 
 const parsedKeyDataInLS = (key = '') => {
   return (JSON.parse(localStorage.getItem(key))) || '';
@@ -30,17 +26,15 @@ function App() {
 
   return (
     <div className={css.App}>
+      <Nav isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />
+      <Route path='/' exact>
+        <Home isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />
+      </Route>
+      <Route path='/signup' exact>
+        <Signup isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />
+      </Route>
+      <Footer />
 
-      <section className={css.glass}>
-        <Nav isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />
-        <Route path='/' exact>
-          <Home isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />
-        </Route>
-        <Route path='/signup' exact>
-          <Signup isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />
-        </Route>
-        <Footer />
-      </section>
     </div>
   );
 }

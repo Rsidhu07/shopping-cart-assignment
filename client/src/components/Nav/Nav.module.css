@@ -1,0 +1,58 @@
+.Nav {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.Nav li{
+  list-style: none;
+  cursor: pointer;
+}
+
+.Nav svg{
+  cursor: pointer;
+}
+
+.navLeftContainer {
+  display: flex;
+  width: 40%;
+}
+
+.leftNav{
+  display: flex;
+  align-items: flex-end;
+  width: 40%;
+}
+
+.mainNav{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.navRightContainer {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+}
+
+.rightNav{
+  display: flex;
+  width: 100%;
+}
+
+.registerLoginNav{
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cartContainer{
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  background: #c7c4c4;
+  width: 63%;
+  justify-content: center;
+}
