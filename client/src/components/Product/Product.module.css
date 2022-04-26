@@ -13,13 +13,13 @@
     letter-spacing: -0.2px;
     font-weight: 400;
     font-size: 10px;
-    padding: 6px;
     cursor: pointer;
 }
 
 .description {
     background: rgb(205, 205, 205);
-    width: 80%;
+    width: 210px;
+    padding: 5px;
 }
 
 .Product h3 {
@@ -33,3 +33,9 @@
     padding: 10px;
     margin-top: -4px;
 } 
+
+.priceAndBuyContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
