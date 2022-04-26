@@ -4,8 +4,7 @@ import css from './Home.module.css';
 import SimpleImageSlider from "react-simple-image-slider";
 import useFetch from '../../utils/useFetch';
 import CategoryTextWithImage from '../../components/CategoryTextWithImage/CategoryTextWithImage';
-
-const BASE_URL = 'http://localhost:5000/'
+import { BASE_URL } from '../../utils/constants';
 
 
 // const categoryImagesWithDescription = [

@@ -26,7 +26,7 @@ const Input = (props) => {
 
   return (
     <Fragment>
-      <label>{props.name.toUpperCase()}</label>
+      <label>{props.name}</label>
       {dynamicInput()}
     </Fragment>
   )

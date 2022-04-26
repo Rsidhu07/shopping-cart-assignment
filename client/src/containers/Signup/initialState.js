@@ -1,10 +1,10 @@
 export const initialState = {
   formData: {
-    name: {
+    firstName: {
       elementType: 'input',
       elementConfig: {
         type: 'text',
-        placeholder: 'Your Name'
+        placeholder: 'Your first name'
       },
       value: '',
       validation: {
@@ -13,16 +13,16 @@ export const initialState = {
       valid: false,
       touched: false
     },
-    password: {
+
+    lastName: {
       elementType: 'input',
       elementConfig: {
-        type: 'password',
-        placeholder: 'Your password'
+        type: 'text',
+        placeholder: 'Your last name'
       },
       value: '',
       validation: {
         required: true,
-        minLength: 8
       },
       valid: false,
       touched: false
@@ -38,6 +38,36 @@ export const initialState = {
       validation: {
         required: true,
         isEmail: true,
+      },
+      valid: false,
+      touched: false
+    },
+
+    password: {
+      elementType: 'input',
+      elementConfig: {
+        type: 'password',
+        placeholder: 'Your password'
+      },
+      value: '',
+      validation: {
+        required: true,
+        minLength: 8
+      },
+      valid: false,
+      touched: false
+    },
+    
+    confirmPassword: {
+      elementType: 'input',
+      elementConfig: {
+        type: 'password',
+        placeholder: 'please confirm password'
+      },
+      value: '',
+      validation: {
+        required: true,
+        minLength: 8
       },
       valid: false,
       touched: false

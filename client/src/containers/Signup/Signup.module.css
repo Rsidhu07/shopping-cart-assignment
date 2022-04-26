@@ -1,0 +1,8 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .loginForm input {
+    border-bottom: 1px solid grey;
+} */

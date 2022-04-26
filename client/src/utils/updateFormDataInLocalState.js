@@ -11,7 +11,13 @@ const updateFormDataInLocalState =(event, id, formData) => {
 
     updatedFormElement['value'] = event['target']['value'];
     updatedFormElement['touched'] = true;
+
     updatedFormElement['valid'] = checkValidity(updatedFormElement['value'], updatedFormElement['validation']);
+
+    if ((id === 'confirmPassword') && formData.password.value !==  updatedFormElement['value']) {
+        updatedFormElement['valid'] = false;
+    }
+
     updatedFormData[id] = updatedFormElement;
 
     const formIsValid = isFormValid(updatedFormData);

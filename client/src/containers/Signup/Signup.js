@@ -3,13 +3,15 @@ import PropTypes from 'prop-types'
 import css from './Signup.module.css'
 import convertFormDataToArray from '../../utils/convertFormDataToArray';
 import updateFormDataInLocalState from '../../utils/updateFormDataInLocalState';
-import { withRouter } from 'react-router-dom';
 import { initialState } from './initialState';
 import Input from '../../components/Input/Input';
+import {useNavigate} from 'react-router-dom';
 
 const Signup = (props) => {
 
-  if (props?.loggedIn) props.history.push('/');
+  const  navigate  = useNavigate();
+
+  if (props?.isUserLoggedIn) navigate('/');
 
   const [formValues, setFormValues] = useState(initialState);
 
@@ -28,16 +30,16 @@ const Signup = (props) => {
   const onUserLogin = (e) => {
     e.preventDefault();
     
-    const { name: { value: name }, password: { value: password }, email: { value: email } } = formValues.formData;
+    const { firstName: { value: fName },lastName: { value: lName }, password: { value: password }, email: { value: email } } = formValues.formData;
     props.setIsUserLoggedIn(true);
     localStorage.setItem('isUserLoggedIn', true);
-    localStorage.setItem('userData', JSON.stringify({ name, email, password }));
-    props.history.push('/dash-board');
+    localStorage.setItem('userData', JSON.stringify({ fName, lName, email, password }));
+    navigate('/');
   };
 
 
   const form = (
-    <form className={css['login-form']}>
+    <form className={css.loginForm}>
       {convertFormDataToArray(formValues.formData).map(formElement => {
         const { id } = formElement;
         const { 
@@ -78,4 +80,4 @@ const Signup = (props) => {
 
 Signup.propTypes = {}
 
-export default withRouter(Signup);
+export default Signup;
