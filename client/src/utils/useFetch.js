@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url) => {
+const useFetch = (url,type) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [apiData, setApiData] = useState(null);
@@ -10,9 +10,16 @@ const useFetch = (url) => {
     setIsLoading(true);
     const myFetch = async () => {
       try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setApiData(data);
+        const dataStoredInLocal = localStorage.getItem(type);
+        if(dataStoredInLocal){
+          setApiData(JSON.parse(dataStoredInLocal));
+        } else{
+          
+          const res = await fetch(url);
+          const resData = await res.json();
+          localStorage.setItem(type, JSON.stringify(resData));
+          setApiData(resData);
+        }
         setIsLoading(false);
       } catch (error) {
         console.log(`error while fetching data from => ${url}`, error);

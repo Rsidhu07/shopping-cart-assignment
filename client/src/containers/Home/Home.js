@@ -13,19 +13,19 @@ import { BASE_URL } from '../../utils/constants';
 
 const Home = props => {
 
-  const { isLoading, apiData: bannersData } = useFetch(`${BASE_URL}banners`);
-  const { isLoading: loadingCategories, apiData: categoriesData } = useFetch(`${BASE_URL}categories`);
-
+  const { isLoading, apiData: bannersData } = useFetch(`${BASE_URL}banners`,'bannersData');
+  const { isLoading: loadingCategories, apiData: categoriesData } = useFetch(`${BASE_URL}categories`,'productCategories');
+  
   const bannersUrl = (bannersData && Array.isArray(bannersData)) ? bannersData.map(({ bannerImageUrl }) => {
     return {
       url: bannerImageUrl
     }
-  }) : [];
+  }) : null;
 
   return (
     <div className={css.Home}>
 
-      {isLoading ? 'loding banners....' :
+      {(isLoading || !bannersUrl) ? 'loding banners....' :
         <SimpleImageSlider
           width={1024}
           height={250}
