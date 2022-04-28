@@ -4,7 +4,8 @@ export const initialState = {
       elementType: 'input',
       elementConfig: {
         type: 'text',
-        placeholder: 'Your first name'
+        placeholder: 'Your first name',
+        label:'First Name'
       },
       value: '',
       validation: {
@@ -18,7 +19,8 @@ export const initialState = {
       elementType: 'input',
       elementConfig: {
         type: 'text',
-        placeholder: 'Your last name'
+        placeholder: 'Your last name',
+        label:'Last Name'
       },
       value: '',
       validation: {
@@ -32,7 +34,8 @@ export const initialState = {
       elementType: 'input',
       elementConfig: {
         type: 'text',
-        placeholder: 'Your Registered Email '
+        placeholder: 'Your Registered Email ',
+        label:'Email'
       },
       value: '',
       validation: {
@@ -47,7 +50,8 @@ export const initialState = {
       elementType: 'input',
       elementConfig: {
         type: 'password',
-        placeholder: 'Your password'
+        placeholder: 'Your password',
+        label:'Password'
       },
       value: '',
       validation: {
@@ -62,7 +66,8 @@ export const initialState = {
       elementType: 'input',
       elementConfig: {
         type: 'password',
-        placeholder: 'please confirm password'
+        placeholder: 'please confirm password',
+        label:'Confirm Password'
       },
       value: '',
       validation: {

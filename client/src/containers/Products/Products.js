@@ -5,9 +5,11 @@ import { BASE_URL } from '../../utils/constants';
 import css from './Products.module.css';
 import Product from '../../components/Product/Product';
 import ProductCategoriesSideBar from '../../components/ProductCategoriesSideBar/ProductCategoriesSideBar';
+import { useSelector } from 'react-redux';
 
 const Products = props => {
 
+  const { cartItems } = useSelector(state => state);
   const { isLoading, apiData: productsData } = useFetch(`${BASE_URL}products`, 'products');
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
@@ -17,9 +19,12 @@ const Products = props => {
 
   console.log('products****', { productsData });
   const productMapFunc = ({ id, ...rest }) => {
+    const isAdded = cartItems.includes(id);
     return (
       <Product
         key={id}
+        id={id}
+        isAdded={isAdded}
         onBuyNow={() => null}
         {...rest}
       />

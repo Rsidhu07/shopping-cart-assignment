@@ -6,6 +6,7 @@ import updateFormDataInLocalState from '../../utils/updateFormDataInLocalState';
 import { initialState } from './initialState';
 import Input from '../../components/Input/Input';
 import {useNavigate} from 'react-router-dom';
+import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 
 const Signup = (props) => {
 
@@ -41,6 +42,7 @@ const Signup = (props) => {
   const form = (
     <form className={css.loginForm}>
       {convertFormDataToArray(formValues.formData).map(formElement => {
+        console.log('formElement***',{formElement})
         const { id } = formElement;
         const { 
           elementType,
@@ -48,7 +50,7 @@ const Signup = (props) => {
           value,
           validation,
           valid,
-          touched
+          touched,
         } = formElement.config;
 
         return (
@@ -62,17 +64,19 @@ const Signup = (props) => {
             touched={touched}
             shouldValidate={validation}
             name={id}
+            label={elementConfig?.label}
             changed={e => inputChangeHandler(e, id, formValues.formData)}
           />
         );
       })}
-      <button disabled={!disabled} onClick={onUserLogin}>Login</button>
+      <PrimaryButton label='Signup' disabled={!disabled} onClick={onUserLogin}>Login</PrimaryButton>
     </form>
   )
 
 
   return (
-    <div className={css.Home}>
+    <div className={css.Signup}>
+      <h3>Signup</h3>
       {form}
     </div>
   );

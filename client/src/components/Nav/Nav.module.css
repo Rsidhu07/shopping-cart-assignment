@@ -11,10 +11,17 @@
 .Nav li{
   list-style: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .Nav svg{
   cursor: pointer;
+}
+
+.Nav a{
+  color: black;
+  text-decoration: none;
+  
 }
 
 .navLeftContainer {
@@ -45,7 +52,7 @@
 }
 
 .registerLoginNav{
-  width: 55%;
+  width: 70%;
   display: flex;
   justify-content: space-around;
 }
@@ -57,4 +64,8 @@
   background: #c7c4c4;
   width: 63%;
   justify-content: center;
+}
+
+.cartSvg{
+  fill: #bc2956;
 }

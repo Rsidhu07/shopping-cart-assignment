@@ -26,7 +26,7 @@ const Input = (props) => {
 
   return (
     <Fragment>
-      <label>{props.name}</label>
+      <label>{props.label}</label>
       {dynamicInput()}
     </Fragment>
   )

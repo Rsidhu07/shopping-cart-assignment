@@ -1,8 +1,9 @@
 .CategoryTextWithImage{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     padding: 2%;
+    margin-top: 2rem;
 }
 
 /* .imageCategory{

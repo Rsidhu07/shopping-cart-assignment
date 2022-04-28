@@ -1,0 +1,7 @@
+.PrimaryButton{
+    cursor: pointer;
+    background: #bf2957;
+    color: #fff;
+    border: none;
+    padding: 5px;
+}

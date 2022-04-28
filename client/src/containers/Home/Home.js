@@ -5,6 +5,7 @@ import SimpleImageSlider from "react-simple-image-slider";
 import useFetch from '../../utils/useFetch';
 import CategoryTextWithImage from '../../components/CategoryTextWithImage/CategoryTextWithImage';
 import { BASE_URL } from '../../utils/constants';
+import { useSelector } from 'react-redux';
 
 
 // const categoryImagesWithDescription = [
@@ -12,6 +13,10 @@ import { BASE_URL } from '../../utils/constants';
 // ];
 
 const Home = props => {
+
+  const state = useSelector(state => state);
+
+  console.log('stae*****',{state})
 
   const { isLoading, apiData: bannersData } = useFetch(`${BASE_URL}banners`,'bannersData');
   const { isLoading: loadingCategories, apiData: categoriesData } = useFetch(`${BASE_URL}categories`,'productCategories');
@@ -27,23 +32,28 @@ const Home = props => {
 
       {(isLoading || !bannersUrl) ? 'loding banners....' :
         <SimpleImageSlider
-          width={1024}
-          height={250}
+          width={'80%'}
+          height={'42%'}
           images={bannersUrl}
           showBullets={true}
           showNavs={true}
         />}
+        <div className={css.categories}>
+
       {loadingCategories ? 'loading categories....' :
-        categoriesData && categoriesData.filter(({enabled})=> enabled).map(cat => {
+        categoriesData && categoriesData.filter(({enabled})=> enabled).map((cat,ind) => {
           return (
             <CategoryTextWithImage
               {...cat}
+              key={cat.id}
               label={cat.key}
+              ind={ind}
               onClick={() => null}
             />
           )
         })
       }
+        </div>
     </div>
   )
 };

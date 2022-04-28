@@ -5,15 +5,14 @@ import Footer from './components/Footer/Footer';
 import Nav from './components/Nav/Nav';
 import Home from './containers/Home/Home';
 import Products from './containers/Products/Products';
+import SignIn from './containers/SignIn/SignIn';
 import Signup from './containers/Signup/Signup';
+import { IS_USER_LOGGED_IN, USER_DATA } from './utils/constants';
 
 
 const parsedKeyDataInLS = (key = '') => {
   return (JSON.parse(localStorage.getItem(key))) || '';
 };
-
-const IS_USER_LOGGED_IN = 'isUserLoggedIn';
-const USER_DATA = 'userData';
 
 function App() {
 
@@ -23,6 +22,7 @@ function App() {
   useEffect(() => {
     if (!isUserLoggedIn) {
       setUserData('');
+      localStorage.setItem(IS_USER_LOGGED_IN,false);
     } else {
       setUserData(parsedKeyDataInLS(USER_DATA));
     }
@@ -35,6 +35,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />} />
         <Route path='/register' element={<Signup isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />} />
+        <Route path='/signin' element={<SignIn isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />} />
         <Route path='/products' element={<Products isUserLoggedIn={isUserLoggedIn} userData={userData} setIsUserLoggedIn={setIsUserLoggedIn} />} />
       </Routes>
       <Footer />
