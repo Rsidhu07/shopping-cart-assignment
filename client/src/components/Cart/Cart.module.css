@@ -1,0 +1,25 @@
+.Cart{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* overflow-y: scroll ; */
+}
+
+.checkoutContainer{
+    position: fixed;
+    width: 41%;
+    bottom: 0.2%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.checkoutContainer > p{
+    font-size: 10px;
+    text-align: center;
+}
+
+.checkoutContainer > button{
+
+}

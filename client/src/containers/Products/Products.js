@@ -17,7 +17,6 @@ const Products = props => {
     setSelectedCategoryId(id);
   }
 
-  console.log('products****', { productsData });
   const productMapFunc = ({ id, ...rest }) => {
     const isAdded = cartItems.includes(id);
     return (

@@ -1,0 +1,19 @@
+.ProductCategoriesSideBar{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 40%;
+    background: hsl(0,0%,96.5%);
+    
+    padding: 8px 0px 0px 8px;
+    flex-direction: column;
+}
+
+.ProductCategoriesSideBar > p{
+    border-bottom:1px solid grey ;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.selectedCat{
+    background: rgb(200, 195, 185);
+}

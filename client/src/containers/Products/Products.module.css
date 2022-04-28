@@ -1,9 +1,19 @@
-.Products{
-   display: flex;
-   width: 80%;
+.Products {
+    display: flex;
+    width: 80%;
 }
 
-.allProducts{
+@media screen and (min-width:480px) and (max-width: 768px) {
+    .Products {
+        display: flex;
+        width: 85%;
+    }
+    .allProducts{
+        margin-left: 30px;
+    }
+}
+
+.allProducts {
     display: flex;
     flex-wrap: wrap;
     width: 100%;

@@ -1,0 +1,30 @@
+.CartItem{
+    display: flex;
+}
+
+.productDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.itemsAndPrice{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.items{
+    display: flex;
+    flex: 0.8 1;
+    justify-content: space-evenly;
+}
+
+.addDecQty{
+    cursor: pointer;
+    background: #bc2251;
+    border-radius: 50%;
+    width:15px;
+    text-align: center;
+    color: #fff;
+}
